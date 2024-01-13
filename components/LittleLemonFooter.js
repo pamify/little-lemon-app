@@ -3,18 +3,17 @@ import { View, Text } from 'react-native';
 
 export default function LittleLemonFooter() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#F4CE14', alignItems: 'center' }}>
+      <View style={{ alignItems: 'center' }}>
         <Text
           style={{
             padding: 5,
             fontSize: 15,
             fontWeight: 'bold',
-            position: 'absolute',
-            bottom: 5,
+            marginBottom: 10,
             width: '100%',
             textAlign: 'center',
             color: 'white',
-            backgroundColor: 'purple'
+            backgroundColor: 'purple',
           }}>
           All rights reserved by Little Lemon, 2022
         </Text>
