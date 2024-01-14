@@ -13,7 +13,7 @@ export default function LittleLemonHeader() {
 
   const headerStyles = StyleSheet.create({
     headerView: {
-      flex: 0.16, 
+      flex: 0.2, 
       backgroundColor: '#F4CE14',
       alignItems: 'center'
     },
