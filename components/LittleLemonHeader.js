@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 export default function LittleLemonHeader() {
     return (
-      <View style={headerStyles.headerView}>
+      <View style={headerStyles.container}>
         <Text style={headerStyles.headerText} >
             Little Lemon
         </Text>
@@ -12,17 +12,13 @@ export default function LittleLemonHeader() {
   }
 
   const headerStyles = StyleSheet.create({
-    headerView: {
-      flex: 0.2, 
-      backgroundColor: '#F4CE14',
-      alignItems: 'center'
+    container: {
+      backgroundColor: '#EE9972',
     },
     headerText: {
-      marginTop: 20,
       padding: 40,
-      fontSize: 30,
-      color: 'black',
-      textAlign: 'center',
-      fontWeight: 'bold',
+    fontSize: 30,
+    color: 'black',
+    textAlign: 'center',
     },
   })
