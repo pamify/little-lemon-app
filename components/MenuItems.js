@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+
+const green = '#495E57';
+const yellow = '#F4CE14';
 
 const menuItemsToDisplay = [
     { name: 'Hummus', price: '$5.00', id: '1A' },
@@ -25,6 +28,50 @@ const menuItemsToDisplay = [
     { name: 'Panna Cotta', price: '$5.00', id: '21V' },
   ];
 
-export default function MenuItems() {
-    
+const Item = ({name, price}) => {
+    return (
+        <View style={menuStyles.innerContainer}>
+            <Text style={menuStyles.itemText}>{name}</Text>
+            <Text style={menuStyles.itemText}>{price}</Text>
+        </View>
+    )
 }
+ 
+export default function MenuItems() {
+
+    const renderItem = ({item}) => <Item name={item.name} price={item.price} />
+
+    return (
+        <View style={menuStyles.container}>
+            {/* <Text style={menuStyles.headerText}>View Menu</Text> */}
+            <FlatList 
+                data={menuItemsToDisplay} 
+                keyExtractor={item => item.id} 
+                renderItem={renderItem}
+            />
+        </View>
+    );
+}
+
+const menuStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    innerContainer: {
+        paddingHorizontal: 40,
+        paddingVertical: 20,
+        backgroundColor: green,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    headerText: {
+        color: 'white',
+        fontSize: 40,
+        flexWrap: 'wrap',
+        textAlign: 'center',
+    },
+    itemText: {
+        color: yellow,
+        fontSize: 20,
+    },
+});
